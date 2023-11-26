@@ -1,0 +1,509 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: AZN UNIFIED, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+    font-family: AZN UNIFIED;
+    src: url(./fonts/AZNUnified-Oblique-Trial.otf) format("opentype");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'AZN UNIFIED', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+body.index-page{
+    min-height: 100vh;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body.schedules-page{
+    overflow: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #003764 ;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1001;
+} 
+
+header h1, section h1{
+    font-size: 24px;
+}
+
+header .navbar ul{
+    list-style: none;
+}
+
+header .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: #fec24d;
+    display: block;
+}
+
+header .navbar ul li a:hover{
+    background: #fec24d;
+    color: white;
+}
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: white;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid #050616;
+}
+
+header .navbar ul li ul li ul{
+    left: 201px;
+    top: 0;
+}
+
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: initial;
+    transition-delay: 0.1s;
+}
+
+.navbar a{
+    font-size: 18px;
+}
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: #fec24d;
+    cursor: pointer;
+    display: none;
+}
+
+header img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+@media(max-width: 991px){
+    header{
+        padding: 20px;
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #050616;
+        display: none;
+    }
+
+    header .navbar ul li{
+        width: 100%;
+    }
+
+    header .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+
+    header .navbar ul li ul li{
+        background: #eee;
+    }
+
+    header .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+}
+
+.lol-a-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.lol-a-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.player-box{
+    display: inline-block;
+    margin: 20px;
+    border: 2px solid #fec24d;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.player-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.player-role, .player-name{
+    margin-top: 10px;
+    color: #fec24d;
+}
+
+.section-divider{
+    width: 80%;
+    margin: 70px auto;
+    border: 1px solid #fec24d;
+}
+
+.lol-substitutes{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 70px;
+}
+
+.lol-substitutes h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.valorant-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.valorant-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.overwatch-gold-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.overwatch-gold-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.non-support-players-gold,
+.support-players-gold{
+    margin-top: 20px;
+}
+
+.overwatch-blue-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 70px;
+}
+
+.overwatch-blue-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.non-support-players-blue,
+.support-players-blue{
+    margin-top: 20px;
+}
+
+.rocket-league-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.rocket-league-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.splatoon-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.splatoon-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.CS2-team{
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    color: #fec24d;
+    margin-top: 150px;
+}
+
+.CS2-team h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.non-support-players-CS2,
+.support-players-CS2{
+    margin-top: 20px;
+}
+
+.video-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#background-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 55, 100, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1;
+}
+
+.welcome-text{
+    text-align: center;
+    font-size: 2em;
+}
+
+.welcome-buttons{
+    margin-top: 20px;
+}
+
+.button{
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #fec24d;
+    color: #003764;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.team-name{
+    font-size: 20px;
+    font-family: 'AZN UNIFIED', sans-serif;
+    color: #fec24d;
+    margin-left: 10px;
+}
+
+#calendar {
+    padding-top: 150px;
+    margin: 0 auto 80px;
+    position: relative;
+}
+
+.calendar-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.calendar-nav h1{
+    text-align: center;
+    color: #fec24d;
+    font-size: 40px;
+    margin: 0;
+    flex: 1;
+}
+
+.nav-arrow{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.inverted-colors{
+    filter: invert(100%);
+}
+
+#prev-week,
+#next-week{
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+#prev-week{
+    transform: scaleX(-1);
+    left: 5%;
+    top: 83.5%;
+}
+
+#next-week{
+    right: 5%;
+    top: 89%;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #003764;
+    color: #fec24d;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    background-color: #fff;
+}
+
+td:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+#event-details{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #003764;
+    color: #fec24d;
+    border-radius: 8px;
+    display: none;
+}
+
+#event-details h2 {
+    font-size: 18px;
+}
+
+#event-details h3 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#event-details p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.event-title{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.event-title:hover{
+    text-decoration: underline;
+}
